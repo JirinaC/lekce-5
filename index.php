@@ -1,5 +1,13 @@
 <?php
+require 'Programators/Objekty/DvourozmerneObjekty/DvourozmernyObrazec.php';
 require 'Programators/Objekty/DvourozmerneObjekty/Obdelnik.php';
+require 'Programators/Objekty/DvourozmerneObjekty/Kruh.php';
+require 'Programators/Objekty/DvourozmerneObjekty/Ctverec.php';
+
+function vypisObsah(DvourozmernyObrazec $obrazec) {
+  echo $obrazec->ziskejObsah();
+}
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -54,8 +62,9 @@ require 'Programators/Objekty/DvourozmerneObjekty/Obdelnik.php';
       </div>
 
       <?php
-        $obdelnik = new Obdelnik(2, 3);
-
+        $obdelnik = new Obdelnik(5, 6);
+        $kruh = new Kruh(5);
+        $ctverec = new Ctverec(5);
       ?>
 
       <div class="container">
@@ -71,7 +80,39 @@ require 'Programators/Objekty/DvourozmerneObjekty/Obdelnik.php';
           </tr>
           <tr>
             <th>Obsah</th>
-            <td><?=$obdelnik->ziskejObsah()?></td>
+            <td><?=vypisObsah($obdelnik)?></td>
+          </tr>
+        </table>
+      </div>
+      
+      <div class="container">
+        <h1>Kruh</h1>
+        <table class="table">
+          <tr>
+            <th>Poloměr</th>
+            <td><?=$kruh->getRadius()?></td>
+          </tr>
+          <tr>
+            <th>Obsah</th>
+            <td><?=$kruh->ziskejObsah()?></td>
+          </tr>
+        </table>
+      </div>
+      
+      <div class="container">
+        <h1>Čtverec</h1>
+        <table class="table">
+          <tr>
+            <th>Strana A</th>
+            <td><?=$ctverec->ziskejStranuA()?></td>
+          </tr>
+          <tr>
+            <th>Strana B</th>
+            <td><?=$ctverec->ziskejStranuB()?></td>
+          </tr>
+          <tr>
+            <th>Obsah</th>
+            <td><?=$ctverec->ziskejObsah()?></td>
           </tr>
         </table>
       </div>

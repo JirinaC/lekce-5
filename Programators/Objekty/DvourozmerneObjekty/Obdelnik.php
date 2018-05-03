@@ -1,5 +1,5 @@
 <?php
-class Obdelnik
+class Obdelnik implements DvourozmernyObrazec
 {
 	private $stranaA;
 
